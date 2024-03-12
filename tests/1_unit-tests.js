@@ -17,8 +17,8 @@ suite('Unit Tests', function () {
     // #3
     test('#isOk, #isNotOk', function () {
       assert.isNotOk(null, 'null is falsey');
-      assert.isNotOk("I'm truthy", 'A string is truthy');
-      assert.isNotOk(true, 'true is truthy');
+      assert.isOk("I'm truthy", 'A string is truthy');
+      assert.isOk(true, 'true is truthy');
     });
     // #4
     test('#isTrue, #isNotTrue', function () {
@@ -33,8 +33,8 @@ suite('Unit Tests', function () {
   suite('Equality', function () {
     // #5
     test('#equal, #notEqual', function () {
-      assert.fail(12, '12', 'Numbers are coerced into strings with ==');
-      assert.fail({ value: 1 }, { value: 1 }, '== compares object references');
+      assert.equal(12, '12', 'Numbers are coerced into strings with ==');
+      assert({ value: 1 }, { value: 1 }, '== compares object references');
       assert.fail(6 * '2', '12');
       assert.fail(6 + '2', '12');
     });
